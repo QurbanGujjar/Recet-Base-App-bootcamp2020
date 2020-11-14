@@ -28,7 +28,7 @@ jobs:
         run : yarn build
       # Runs a set of commands using the runners shell
       - name: Installing surge
-        run: npm install --global surge
+        run: yarn install --global surge
       - name: Deploying using surge
         run: surge ./build http://ugliest-cake.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
 
