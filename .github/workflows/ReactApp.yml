@@ -22,7 +22,7 @@ jobs:
       - name: setup node.js environment
         uses: actions/setup-node@v2-beta
         with:
-          version:13
+          version: 13
 
       - name: Github action for yarn
         uses: Borales/actions-yarn@1.22.10
