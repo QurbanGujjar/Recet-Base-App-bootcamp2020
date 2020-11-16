@@ -27,13 +27,13 @@ jobs:
         with:
           node-version: 12
       - name: Github action for yarn
-        uses: borales/actions-yarn@v2.0.0
+        uses: borales/actions-yarn@v1.22.10
         with:
           cmd: add yarn #yarn cammand
       - name: Creating React app 
         run: yarn build
       # Runs a set of commands using the runners shell
-      - name: Installing surge
+      - name: Install surge
         run: npm install --global surge
       - name: Deploying using surge
         run: surge ./build ugliest-cake.surge.sh --token ${{ secrets.SURGE_REACT_TOKEN }}
