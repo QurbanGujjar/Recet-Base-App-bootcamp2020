@@ -31,7 +31,7 @@ jobs:
         uses: Borales/actions-yarn@v2.0.0
         with:
           cmd: install #yarn cammand
-      - name : Creating React app 
+      - name: Creating React app 
         run: yarn build
       # Runs a set of commands using the runners shell
       - name: Installing surge
