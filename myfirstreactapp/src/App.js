@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <h1>Qurban Ali</h1>
       </header>
     </div>
   );
