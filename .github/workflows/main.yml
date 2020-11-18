@@ -19,15 +19,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: yarn installing 
-      - uses: borales/actions-yarn@v2.0.0
+      - name: setup Node.js envirment
+        uses: actions/setup-node@v2-beta
         with:
-          cmd: install # will run `yarn install` command
-      - name: build react app
+          version: 12  
+      - name: GitHub Action for Yarn
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+         cmd: install # Yarn command
+      - name: Creating Build
         run: yarn build
-      - name: install surge
-        run: npm install --global surge
-      - name: Deploying to surge
-        run: yarn ./build ugliest-cake.surge.sh --token ${{ secrets.SURGE_REACT_TOKEN }}
+      - name: installing surge
+        run: npm install -g surge
+      - name: deploying surge
+        run: surge ./build ugliest-cake.surge.sh --token ${{ secrets.SURGE_REACT_TOKEN }}  
